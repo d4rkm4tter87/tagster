@@ -53,7 +53,7 @@ export const useFeedbackItemsStore = create<Store>((set, get) => ({
       feedbackItems: [newItem, ...state.feedbackItems],
     }));
 
-    await fetch("/src/lib/feedbacks.json", {
+    await fetch("feedbacks.json", {
       method: "POST",
       body: JSON.stringify(newItem),
       headers: {
@@ -72,7 +72,7 @@ export const useFeedbackItemsStore = create<Store>((set, get) => ({
       isLoading: true,
     }));
     try {
-      const response = await fetch("/src/lib/feedbacks.json");
+      const response = await fetch("feedbacks.json");
       if (!response.ok) {
         throw new Error();
       }
