@@ -50,7 +50,7 @@ export default function FeedbackForm({ onAddToList }: FeedbackFormProps) {
         onChange={handleChange}
       />
       <label htmlFor="feedback-textarea">
-        Enter your feedback here, remember to #hashtag the company
+        Enter your tag here, remember to #hashtag
       </label>
       <div>
         <p className="u-italic">{charCount}</p>
