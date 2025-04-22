@@ -1,7 +1,7 @@
 export default function PageHeading() {
   return (
     <h1>
-      Give Feedback.
+      Post your tags.
       <span>Publicly.</span>
     </h1>
   );
