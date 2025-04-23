@@ -1,6 +1,8 @@
 import { create } from "zustand";
 import { TFeedbackItem } from "../lib/types";
 
+import { datax } from "./data";
+
 type Store = {
   feedbackItems: TFeedbackItem[];
   isLoading: boolean;
@@ -18,6 +20,7 @@ export const useFeedbackItemsStore = create<Store>((set, get) => ({
   isLoading: false,
   errorMessage: "",
   selectedCompany: "",
+
   getCompanyList: () => {
     return get()
       .feedbackItems.map((item) => item.company)
@@ -53,14 +56,14 @@ export const useFeedbackItemsStore = create<Store>((set, get) => ({
       feedbackItems: [newItem, ...state.feedbackItems],
     }));
 
-    await fetch("feedbacks.json", {
+    /*await fetch("feedbacks.json", {
       method: "POST",
       body: JSON.stringify(newItem),
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
-    });
+    });*/
   },
   selectCompany: (company: string) => {
     set(() => ({
@@ -76,10 +79,9 @@ export const useFeedbackItemsStore = create<Store>((set, get) => ({
       if (!response.ok) {
         throw new Error();
       }
-      const data = await response.json();
 
       set(() => ({
-        feedbackItems: data.feedbacks,
+        feedbackItems: datax,
       }));
     } catch (e) {
       console.error(e);
