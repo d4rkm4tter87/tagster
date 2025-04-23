@@ -74,6 +74,7 @@ export const useFeedbackItemsStore = create<Store>((set, get) => ({
     set(() => ({
       isLoading: true,
     }));
+    /*
     try {
       const response = await fetch("feedbacks.json");
       if (!response.ok) {
@@ -89,6 +90,10 @@ export const useFeedbackItemsStore = create<Store>((set, get) => ({
         errorMessage: "Error fetching feedback items",
       }));
     }
+    */
+    set(() => ({
+      feedbackItems: datax,
+    }));
     set(() => ({
       isLoading: false,
     }));
