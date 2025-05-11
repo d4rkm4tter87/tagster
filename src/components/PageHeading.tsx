@@ -1,8 +1,7 @@
 export default function PageHeading() {
   return (
     <h1>
-      Post your tags.
-      <span>Publicly.</span>
+      <span>Your public tag review place.</span>
     </h1>
   );
 }
